@@ -4,6 +4,7 @@ import Logo from "../../../src/assets/icon.svg";
 import { HiOutlineChevronUpDown, HiShoppingCart } from "react-icons/hi2";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiFilter } from "react-icons/bi";
+import {Category} from '../../utils/common'
 
 function Home() {
   return (
@@ -22,6 +23,17 @@ function Home() {
         <div className='shopping-container'>
           <HiShoppingCart size={25} />
         </div>
+      </div>
+      <h4 className='mt-5'>Category</h4>
+      <div className='d-flex mt-4'>
+        {Category.map((item,index)=>{
+          return(
+            <div className='d-flex align-items-center justify-content-center mx-4'>
+              <img src={item.img} alt="logo" className='ms-2'/>
+              <p className='m-0'>{item.name}</p>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

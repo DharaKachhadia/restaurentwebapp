@@ -1,10 +1,10 @@
+@import "~bootstrap/scss/bootstrap";
+
 .nav-container {
-
   justify-content: flex-end;
-
+  margin: 20px;
   .main-container {
     height: 48px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
