@@ -12,16 +12,16 @@ import { CgLoadbarDoc } from "react-icons/cg";
 import { MdMailOutline } from "react-icons/md";
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
 import { HiArrowSmRight } from "react-icons/hi";
-import { BiChevronLeft } from "react-icons/bi";
+import { BiChevronLeft,BiChevronRight } from "react-icons/bi";
 
-function SideBar() {
+function SideBar(props) {
   let location = useLocation();
   const CURRENT_WB_NAME = location.pathname.split("/")[1];
-  const [active, setActive] = useState(true);
+  const { onHandlebar, active } = props;
   return (
     <div className={`${!active && "inactive"} sidebar-container`}>
-      <div className="close-btn" onClick={() => setActive(!active)}>
-        <BiChevronLeft size={40} color="white" />
+      <div className="close-btn" onClick={onHandlebar}>
+        {active ? <BiChevronLeft size={40} color="white" /> : <BiChevronRight size={40} color="white" />}
       </div>
       <div className="sidebar-wrapper">
         <div className="logo-container">
@@ -45,6 +45,7 @@ function SideBar() {
             <Link to={"./notifications"} className="list-item">
               <MdMailOutline className={active && "sidler-icon"} size={25} />
               {active && "Notifications"}
+              {active && <div className="noti-icn">2</div>}
             </Link>
           </li>
           <li className={CURRENT_WB_NAME === "helpsupport" && "active"}>
@@ -69,25 +70,20 @@ function SideBar() {
           </div>
         )}
         {active && (
-          <>
-          <div className="order-card">
-            <div className="order-icon">
-              <img src={Order} alt="logo" className="order-card-icon" />
+            <div className="order-card">
+              <div className="order-icon">
+                <img src={Order} alt="logo" className="order-card-icon" />
+              </div>
+              <p className="order-ready">Your Order is now Ready </p>
+              <div className="Splint-Doumo">
+                <p>Splint Doumo</p>
+                <p>Order Id: #ED564F</p>
+              </div>
+              <div className="order-Details">
+                <p className="Details">Details</p>
+                <HiArrowSmRight size={25} className="right-arrow" />
+              </div>
             </div>
-            <p className="order-ready">Your Order is now Ready </p>
-            <div className="Splint-Doumo">
-              <p>Splint Doumo</p>
-              <p>Order Id: #ED564F</p>
-            </div>
-            <div className="order-Details">
-              <p className="Details">Details</p>
-              <HiArrowSmRight size={25} className="right-arrow" />
-            </div>
-          </div>
-          <div className="order-back-card">
-            
-          </div>
-          </>
         )}
         {active && (
           <div className="email-container">

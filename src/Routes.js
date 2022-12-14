@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./routes.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {
@@ -12,12 +12,15 @@ import {
 import Sidebar from "./Components/Sidebar";
 
 function RoutesScreen() {
+  const [active, setActive] = useState(true)
+
+  const onHandlebar = () =>setActive(!active)
   return (
     <div className="routes-wrapper">
       <BrowserRouter>
         <div className="routes-container">
           <div className="sidebar">
-            <Sidebar />
+            <Sidebar onHandlebar={onHandlebar} active={active}/>
           </div>
           <div className="main-content">
             <Routes>
