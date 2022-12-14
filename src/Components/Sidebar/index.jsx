@@ -9,7 +9,7 @@ import {
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
 import { CgLoadbarDoc } from "react-icons/cg";
-import { MdMailOutline } from "react-icons/md";
+import { MdMailOutline,MdClose } from "react-icons/md";
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
 import { HiArrowSmRight } from "react-icons/hi";
 import { BiChevronLeft,BiChevronRight } from "react-icons/bi";
@@ -71,6 +71,7 @@ function SideBar(props) {
         )}
         {active && (
             <div className="order-card">
+              <MdClose className="close-img"/>
               <div className="order-icon">
                 <img src={Order} alt="logo" className="order-card-icon" />
               </div>
