@@ -3,6 +3,14 @@
 .nav-container {
   justify-content: flex-end;
   margin: 20px;
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #182135;
+  }
+
   .main-container {
     height: 48px;
     display: flex;
@@ -54,8 +62,6 @@
   .filter-container {
     height: 48px;
     width: 48px;
-    left: 0px;
-    top: 0px;
     border-radius: 10px;
     background-color: #503E9D;
     margin-right: 10px;
@@ -68,8 +74,6 @@
   .shopping-container {
     height: 48px;
     width: 48px;
-    left: 0px;
-    top: 0px;
     border-radius: 10px;
     background-color: #FB6D3A;
     margin-right: 10px;
@@ -77,5 +81,46 @@
     justify-content: center;
     display: flex;
     color: #fff;
+  }
+
+  .restaurants-container {
+    width: 336px;
+
+    img {
+      height: 176px;
+      width: 100%;
+      border-radius: 16px;
+      margin: 0 !important;
+    }
+
+    .burger-mania {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #182135;
+    }
+
+    .open-now {
+      height: 24px;
+      width: 73px;
+      border-radius: 4px;
+      padding: 4px 8px 4px 8px;
+      background-color: #eeecf6;
+
+      p {
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 16px;
+        text-align: right;
+        color: #503E9D;
+      }
+    }
+
+    .details-restaurant {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #000000;
+    }
   }
 }
