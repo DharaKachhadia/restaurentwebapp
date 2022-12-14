@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sidebar.scss";
 import Logo from "../../assets/footerlogo.svg";
 import Order from "../../assets/ordertimer.svg";
@@ -12,70 +12,94 @@ import { CgLoadbarDoc } from "react-icons/cg";
 import { MdMailOutline } from "react-icons/md";
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
 import { HiArrowSmRight } from "react-icons/hi";
+import { BiChevronLeft } from "react-icons/bi";
 
 function SideBar() {
   let location = useLocation();
   const CURRENT_WB_NAME = location.pathname.split("/")[1];
+  const [active, setActive] = useState(true);
   return (
-    <div className="sidebar-wrapper">
-      <div className="logo-container">
-        <img src={Logo} alt="logo" className="logo" />
-        <p>Pomo & co</p>
+    <div className={`${!active && "inactive"} sidebar-container`}>
+      <div className="close-btn" onClick={() => setActive(!active)}>
+        <BiChevronLeft size={40} color="white" />
       </div>
-      <ul>
-        <li className={CURRENT_WB_NAME === "home" && "active"}>
-          <Link to={"./home"} className="list-item">
-            <AiOutlineHome className="sidler-icon" size={22} />
-            Home
-          </Link>
-        </li>
-        <li className={CURRENT_WB_NAME === "orders" && "active"}>
-          <Link to={"./orders"} className="list-item">
-            <CgLoadbarDoc className="sidler-icon" size={25} />
-            Orders
-          </Link>
-        </li>
-        <li className={CURRENT_WB_NAME === "notifications" && "active"}>
-          <Link to={"./notifications"} className="list-item">
-            <MdMailOutline className="sidler-icon" size={22} />
-            Notifications
-          </Link>
-        </li>
-        <li className={CURRENT_WB_NAME === "helpsupport" && "active"}>
-          <Link to={"./helpsupport"} className="list-item">
-            <AiOutlineQuestionCircle className="sidler-icon" size={22} />
-            HelpSupport
-          </Link>
-        </li>
-        <li className={CURRENT_WB_NAME === "settings" && "active"}>
-          <Link to={"./settings"} className="list-item">
-            <AiOutlineSetting className="sidler-icon" size={22} />
-            Settings
-          </Link>
-        </li>
-      </ul>
-      <div className="order-card">
-        <div className="order-icon">
-          <img src={Order} alt="logo" className="order-card-icon" />
+      <div className="sidebar-wrapper">
+        <div className="logo-container">
+          <img src={Logo} alt="logo" className="logo" />
+          {active && <p>Pomo & co</p>}
         </div>
-        <p className="order-ready">Your Order is now Ready </p>
-        <div className="Splint-Doumo">
-          <p>Splint Doumo</p>
-          <p>Order Id: #ED564F</p>
-        </div>
-        <div className="order-Details">
-          <p className="Details">Details</p>
-          <HiArrowSmRight size={25} className="right-arrow" />
-        </div>
-      </div>
-      <div className="email-container">
-        <div>
-          <p className="name">Mark Clarke</p>
-          <p className="name-email">markclarke@gmail.com</p>
-        </div>
-        <div className="down-up">
-          <HiOutlineChevronUpDown size={35} />
-        </div>
+        <ul>
+          <li className={CURRENT_WB_NAME === "home" && "active"}>
+            <Link to={"./home"} className="list-item">
+              <AiOutlineHome className={active && "sidler-icon"} size={25} />
+              {active && "Home"}
+            </Link>
+          </li>
+          <li className={CURRENT_WB_NAME === "orders" && "active"}>
+            <Link to={"./orders"} className="list-item">
+              <CgLoadbarDoc className={active && "sidler-icon"} size={28} />
+              {active && "Orders"}
+            </Link>
+          </li>
+          <li className={CURRENT_WB_NAME === "notifications" && "active"}>
+            <Link to={"./notifications"} className="list-item">
+              <MdMailOutline className={active && "sidler-icon"} size={25} />
+              {active && "Notifications"}
+            </Link>
+          </li>
+          <li className={CURRENT_WB_NAME === "helpsupport" && "active"}>
+            <Link to={"./helpsupport"} className="list-item">
+              <AiOutlineQuestionCircle
+                className={active && "sidler-icon"}
+                size={25}
+              />
+              {active && "HelpSupport"}
+            </Link>
+          </li>
+          <li className={CURRENT_WB_NAME === "settings" && "active"}>
+            <Link to={"./settings"} className="list-item">
+              <AiOutlineSetting className={active && "sidler-icon"} size={25} />
+              {active && "Settings"}
+            </Link>
+          </li>
+        </ul>
+        {!active && (
+          <div className="order-icon">
+            <img src={Order} alt="logo" className="order-card-icon" />
+          </div>
+        )}
+        {active && (
+          <>
+          <div className="order-card">
+            <div className="order-icon">
+              <img src={Order} alt="logo" className="order-card-icon" />
+            </div>
+            <p className="order-ready">Your Order is now Ready </p>
+            <div className="Splint-Doumo">
+              <p>Splint Doumo</p>
+              <p>Order Id: #ED564F</p>
+            </div>
+            <div className="order-Details">
+              <p className="Details">Details</p>
+              <HiArrowSmRight size={25} className="right-arrow" />
+            </div>
+          </div>
+          <div className="order-back-card">
+            
+          </div>
+          </>
+        )}
+        {active && (
+          <div className="email-container">
+            <div>
+              <p className="name">Mark Clarke</p>
+              <p className="name-email">markclarke@gmail.com</p>
+            </div>
+            <div className="down-up">
+              <HiOutlineChevronUpDown size={35} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
