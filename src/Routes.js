@@ -31,7 +31,7 @@ function RoutesScreen() {
               <Route expect path="/notifications" element={<Notifications />} />
               <Route expect path="/helpsupport" element={<HelpSupport />} />
               <Route expect path="/settings" element={<Settings />} />
-              <Route path="*" element={<ErrorPage />} />
+              {/* <Route path="*" element={<ErrorPage />} /> */}
             </Routes>
           </div>
         </div>

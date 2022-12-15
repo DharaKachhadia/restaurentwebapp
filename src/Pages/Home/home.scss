@@ -12,15 +12,17 @@
   }
 
   .main-container {
-    height: 48px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: fixed;
-    top: 20px;
+    top: 0px;
     right: 0;
     background-color: #fff;
     z-index: 100;
+    width: calc(100% - 310px);
+    padding:10px 10px 0 0;
     .logo {
       height: 20px;
       width: 24px;
@@ -139,6 +141,7 @@
       font-size: 12px;
       line-height: 18px;
       color: #000000;
+      text-align: justify;
     }
   }
   .category-title {

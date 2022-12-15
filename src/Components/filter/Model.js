@@ -32,9 +32,42 @@ function Model({ close }) {
           </div>
         </div>
         <div className="second-view">
-          <p className="text">cuisine</p>
+        <p className="text">cuisine</p>
+          <div className="filter">
+          
           <div className="Cuisine-box">
             <p className="open-text">All</p>
+          </div>
+          <div className="Cuisine-box1">
+            <p className="open-text">Fast food</p>
+          </div>
+          <div className="Cuisine-box1">
+            <p className="open-text">American food</p>
+            </div>
+            {/* <div className="Cuisine-box1">
+            <p className="open-text">All</p>
+            </div> */}
+          </div>
+          <div className="filter1">
+          
+          <div className="Cuisine-box1">
+            <p className="open-text">Pizza</p>
+          </div>
+          <div className="Cuisine-box1">
+            <p className="open-text">Assian</p>
+          </div>
+          <div className="Cuisine-box1">
+            <p className="open-text">Dessert</p>
+            </div>
+            <div className="Cuisine-box1">
+            <p className="open-text">Mexican</p>
+            </div>
+          </div>
+          <div className="filter1">
+          
+          <div className="Cuisine-box1">
+            <p className="open-text">Breakfast</p>
+          </div>
           </div>
         </div>
         {/* apply button section */}
