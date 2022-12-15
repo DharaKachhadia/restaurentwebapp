@@ -8,23 +8,25 @@ import {
   HelpSupport,
   Settings,
   ErrorPage,
+  DetailsPage,
 } from "./Pages/index";
 import Sidebar from "./Components/Sidebar";
 
 function RoutesScreen() {
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(true);
 
-  const onHandlebar = () =>setActive(!active)
+  const onHandlebar = () => setActive(!active);
   return (
     <div className="routes-wrapper">
       <BrowserRouter>
         <div className="routes-container">
           <div className="sidebar">
-            <Sidebar onHandlebar={onHandlebar} active={active}/>
+            <Sidebar onHandlebar={onHandlebar} active={active} />
           </div>
           <div className="main-content">
             <Routes>
               <Route expect path="/home" element={<Home />} />
+              <Route expect path="/details/:name" element={<DetailsPage />} />
               <Route expect path="/orders" element={<Orders />} />
               <Route expect path="/notifications" element={<Notifications />} />
               <Route expect path="/helpsupport" element={<HelpSupport />} />

@@ -16,10 +16,15 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
+    position: fixed;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    z-index: 100;
     .logo {
       height: 20px;
       width: 24px;
+      cursor: pointer;
     }
 
     .Da-Otto {
@@ -30,12 +35,11 @@
       margin-left: 10px;
     }
 
-
     .filter-container {
       height: 48px;
       width: 48px;
       border-radius: 10px;
-      background-color: #503E9D;
+      background-color: #503e9d;
       margin-right: 10px;
       align-items: center;
       justify-content: center;
@@ -47,7 +51,7 @@
       height: 48px;
       width: 48px;
       border-radius: 10px;
-      background-color: #FB6D3A;
+      background-color: #fb6d3a;
       margin-right: 10px;
       align-items: center;
       justify-content: center;
@@ -81,45 +85,66 @@
         margin-left: 10px;
       }
     }
-
-   
   }
- .restaurants-container {
-      width: 336px;
+  .restaurants-container {
+    width: 33%;
+    text-decoration: none;
 
-      img {
-        height: 176px;
-        width: 100%;
-        border-radius: 16px;
+    img {
+      height: 250px;
+      width: 100%;
+      border-radius: 16px;
+      margin: 0 !important;
+    }
+
+    .burger-mania {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #182135;
+    }
+
+    .status {
+      border-radius: 4px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      p {
         margin: 0 !important;
+        padding: 0 !important;
+        font-weight: 600;
+        font-size: 11px;
       }
-
-      .burger-mania {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        color: #182135;
-      }
-
-      .open-now {
-        height: 24px;
+      &.open-now {
         width: 73px;
-        border-radius: 4px;
-        padding: 4px 8px 4px 8px;
+        height: 24px;
         background-color: #eeecf6;
-
         p {
-          font-weight: 600;
-          font-size: 11px;
-          line-height: 16px;
-          text-align: right;
-          color: #503E9D;
+          color: #503e9d;
+        }
+      }
+      &.closed {
+        width: 52px;
+        height: 24px;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: rgba(251, 109, 58, 0.1);
+        p {
+          color: #fb6d3a;
         }
       }
     }
+    .details-restaurant {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #000000;
+    }
+  }
   .category-title {
     font-size: 24px;
     font-weight: 700;
+    margin-top: 100px;
   }
 
   .category {

@@ -1,53 +1,96 @@
-import React from 'react';
-import './home.scss'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./home.scss";
 import Logo from "../../../src/assets/icon.svg";
 import { HiOutlineChevronUpDown, HiShoppingCart } from "react-icons/hi2";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiFilter } from "react-icons/bi";
-import { Category } from '../../utils/common'
+import { Category } from "../../utils/common";
+import { Link } from "react-router-dom";
+import Model from "../../Components/filter/Model";
 
 function Home() {
+  const [openModel, setOpenModel] = useState(false);
+  const [res, setRes] = useState([]);
+  const fetchData = () => {
+    return axios
+      .get(
+        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/allRestaurants"
+      )
+      .then((response) => setRes(response.data.allRestaurants));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
-    <div className='nav-container'>
-      <div className='main-container'>
+    <div className="nav-container">
+      <div className="main-container">
         <img src={Logo} alt="logo" className="logo" />
-        <p className='Da-Otto mb-0'> Da Otto</p>
+        <p className="Da-Otto mb-0"> Da Otto</p>
         <HiOutlineChevronUpDown size={25} className="down-up-arrow" />
-        <div className='search'>
-          <AiOutlineSearch className='search-icon' size={20}/>
-          <input type="text" className='search-input' maxLength="50" size="15" placeholder="Search for Restaurants  (Press Enter to search)" />
+        <div className="search">
+          <AiOutlineSearch className="search-icon" size={20} />
+          <input
+            type="text"
+            className="search-input"
+            maxLength="50"
+            size="15"
+            placeholder="Search for Restaurants  (Press Enter to search)"
+          />
         </div>
-        <div className='filter-container'>
+        <div
+          className="filter-container"
+          onClick={() => {
+            setOpenModel(true);
+          }}
+        >
           <BiFilter size={30} />
         </div>
-        <div className='shopping-container'>
+        {openModel && <Model close={setOpenModel} />}
+        <div className="shopping-container">
           <HiShoppingCart size={25} />
         </div>
       </div>
-      <h4 className='mt-5 category-title'>Category</h4>
-      <div className='d-flex mt-4'>
-        {Category.map((item,index)=>{
-          return(
-            <div className='d-flex align-items-center justify-content-center category'>
-              <img src={item.img} alt="logo" className='ms-2'/>
-              <p className='mb-0'>{item.name}</p>
+      <h4 className="category-title">Category</h4>
+      <div className="d-flex mt-4">
+        {Category.map((item, index) => {
+          return (
+            <div className="d-flex align-items-center justify-content-center category">
+              <img src={item.img} alt="logo" className="ms-2" />
+              <p className="mb-0">{item.name}</p>
             </div>
-          )
+          );
         })}
       </div>
-      <h4 className='mt-5'>Restaurants</h4>
-      <div className="restaurants-container mt-4">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="logo" className='ms-2' />
-        <div className='d-flex justify-content-between mt-2'>
-          <p className='burger-mania'>Burger Mania</p>
-          <div className='open-now'><p>open now</p></div>
-        </div>
-        <div>
-          <p className='details-restaurant'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies quis lorem non mollis. Fusce nec est at sem interdum congue. Aliquam venenatis turpis ac ...</p>
-        </div>
+      <h4 className="mt-5">Restaurants</h4>
+      <div className="row">
+        {res.map((item, index) => {
+          return (
+            <Link
+              to={`/details/${item.restaurantName}`}
+              className="restaurants-container mt-4 "
+            >
+              <img src={item.restaurantImage} alt="logo" className="ms-2" />
+              <div className="d-flex justify-content-between mt-2">
+                <p className="burger-mania">{item.restaurantName}</p>
+                <div
+                  className={item.isOpen ? "status open-now" : " status closed"}
+                >
+                  <p>{item.isOpen ? "open now" : "closed"}</p>
+                </div>
+              </div>
+              <div>
+                <p className="details-restaurant">
+                  {item.restaurantDescription}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

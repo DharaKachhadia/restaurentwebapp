@@ -1,7 +1,7 @@
 .sidebar-container {
   position: relative;
   width: 304px;
-  transition:  .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   .close-btn {
     position: absolute;
     display: flex;
@@ -17,12 +17,12 @@
     z-index: 100000;
     cursor: pointer;
 
-    &:hover{
-    background-color: #493990;
+    &:hover {
+      background-color: #493990;
     }
   }
 
-  &.inactive{
+  &.inactive {
     width: 100px;
   }
   .sidebar-wrapper {
@@ -44,7 +44,7 @@
       .logo {
         height: 42px;
         width: 80px;
-        left: 1px;
+        cursor: pointer;
       }
       p {
         font-family: Open Sans;
@@ -76,7 +76,7 @@
           align-items: center;
           text-decoration: none;
 
-          .noti-icn{
+          .noti-icn {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -101,7 +101,7 @@
             color: #fff;
             font-weight: 700;
 
-            .noti-icn{
+            .noti-icn {
               background-color: #ffffff;
               color: #503e9d;
             }
@@ -148,7 +148,7 @@
       margin-top: 100px;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 29px 0px;
 
-      .close-img{
+      .close-img {
         position: absolute;
         top: 12px;
         right: 12px;
