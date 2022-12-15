@@ -25,13 +25,13 @@ function RoutesScreen() {
           </div>
           <div className="main-content">
             <Routes>
-              <Route expect path="/home" element={<Home />} />
+              <Route expect path="/home" element={<Home />} />              
               <Route expect path="/details/:name" element={<DetailsPage />} />
               <Route expect path="/orders" element={<Orders />} />
               <Route expect path="/notifications" element={<Notifications />} />
               <Route expect path="/helpsupport" element={<HelpSupport />} />
               <Route expect path="/settings" element={<Settings />} />
-              {/* <Route path="*" element={<ErrorPage />} /> */}
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
         </div>

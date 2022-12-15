@@ -38,11 +38,13 @@
         background-color: #f7f7f7;
         border: 0;
       }
+
       .buttonView:hover {
         background-color: #503e9d;
         color: #fff;
       }
     }
+
     .second-view {
       display: flex;
       flex-direction: column;
@@ -55,6 +57,7 @@
         line-height: 32px;
         color: #182135;
       }
+
       .text {
         margin-top: 20px;
         font-weight: 700;
@@ -62,11 +65,13 @@
         line-height: 32px;
         color: #182135;
       }
+
       .first-filter {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+
         .fire {
           width: 48px;
           height: 48px;
@@ -76,6 +81,7 @@
           align-items: center;
           justify-content: center !important;
           display: flex;
+
           .fire-image {
             height: 30px;
             width: 30px;
@@ -87,6 +93,7 @@
           margin: 0;
         }
       }
+
       .Cuisine-box {
         height: 40px;
         padding: 20px;
@@ -97,6 +104,7 @@
         justify-content: center;
         margin-right: 15px;
         cursor: pointer;
+
         .open-text {
           font-weight: 700;
           font-size: 16px;
@@ -105,6 +113,7 @@
           margin: 0 !important;
         }
       }
+
       .Cuisine-box1 {
         height: 40px;
         padding: 20px;
@@ -115,6 +124,7 @@
         justify-content: center;
         margin-right: 15px;
         cursor: pointer;
+
         .open-text {
           font-weight: 400;
           font-size: 16px;
@@ -123,23 +133,28 @@
           margin: 0 !important;
         }
       }
+
       .Cuisine-box1:hover {
         background-color: rgba(251, 109, 58, 0.1);
         color: #fb6d3a;
+
         .open-text:hover {
           color: #fb6d3a;
         }
       }
+
       .filter {
         flex-direction: "row";
         display: flex;
       }
+
       .filter1 {
         flex-direction: "row";
         display: flex;
         margin-top: 15px;
       }
     }
+
     .last-btn {
       bottom: 0;
       position: fixed;

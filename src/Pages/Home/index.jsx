@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Apis } from '../../utils/environment'
 import "./home.scss";
-import Logo from "../../../src/assets/icon.svg";
+import Logo from "../../../src/assets/Images/icon.svg";
 import { HiOutlineChevronUpDown, HiShoppingCart } from "react-icons/hi2";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiFilter } from "react-icons/bi";
 import { Category } from "../../utils/common";
 import { Link } from "react-router-dom";
-import Model from "../../Components/filter/Model";
+import Model from "../../Components/filter/Filter";
 
 function Home() {
   const [openModel, setOpenModel] = useState(false);
   const [res, setRes] = useState([]);
   const fetchData = () => {
     return axios
-      .get(
-        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/allRestaurants"
-      )
+      .get(Apis.restaurants)
       .then((response) => setRes(response.data.allRestaurants));
   };
 

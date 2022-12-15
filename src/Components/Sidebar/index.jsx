@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sidebar.scss";
-import Logo from "../../assets/footerlogo.svg";
-import Order from "../../assets/ordertimer.svg";
+import Logo from "../../assets/Images/footerlogo.svg";
+import Order from "../../assets/Images/ordertimer.svg";
 import { Link, useLocation } from "react-router-dom";
 import {
   AiOutlineHome,
@@ -9,10 +9,10 @@ import {
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
 import { CgLoadbarDoc } from "react-icons/cg";
-import { MdMailOutline,MdClose } from "react-icons/md";
+import { MdMailOutline, MdClose } from "react-icons/md";
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
 import { HiArrowSmRight } from "react-icons/hi";
-import { BiChevronLeft,BiChevronRight } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 function SideBar(props) {
   let location = useLocation();
@@ -70,21 +70,21 @@ function SideBar(props) {
           </div>
         )}
         {active && (
-            <div className="order-card">
-              <MdClose className="close-img"/>
-              <div className="order-icon">
-                <img src={Order} alt="logo" className="order-card-icon" />
-              </div>
-              <p className="order-ready">Your Order is now Ready </p>
-              <div className="Splint-Doumo">
-                <p>Splint Doumo</p>
-                <p>Order Id: #ED564F</p>
-              </div>
-              <div className="order-Details">
-                <p className="Details">Details</p>
-                <HiArrowSmRight size={25} className="right-arrow" />
-              </div>
+          <div className="order-card">
+            <MdClose className="close-img" />
+            <div className="order-icon">
+              <img src={Order} alt="logo" className="order-card-icon" />
             </div>
+            <p className="order-ready">Your Order is now Ready </p>
+            <div className="Splint-Doumo">
+              <p>Splint Doumo</p>
+              <p>Order Id: #ED564F</p>
+            </div>
+            <div className="order-Details">
+              <p className="Details">Details</p>
+              <HiArrowSmRight size={25} className="right-arrow" />
+            </div>
+          </div>
         )}
         {active && (
           <div className="email-container">

@@ -2,6 +2,7 @@
   position: relative;
   width: 304px;
   transition: 0.3s all ease-in-out;
+
   .close-btn {
     position: absolute;
     display: flex;
@@ -25,6 +26,7 @@
   &.inactive {
     width: 100px;
   }
+
   .sidebar-wrapper {
     display: flex;
     flex-direction: column;
@@ -35,17 +37,20 @@
     padding: 0 20px;
     overflow-y: scroll;
     overflow-x: hidden;
+
     .logo-container {
       display: flex;
       height: 100px;
       width: 100%;
       align-items: center;
       margin-top: 32px;
+
       .logo {
         height: 42px;
         width: 80px;
         cursor: pointer;
       }
+
       p {
         font-family: Open Sans;
         font-size: 21px;
@@ -56,15 +61,18 @@
         margin-left: 10px;
       }
     }
+
     ul {
       margin-top: 30px;
       padding: 0 !important;
+
       li {
         padding: 15px;
         border-radius: 10px;
         transition: 0.1s ease-in-out;
 
         cursor: pointer;
+
         .list-item {
           font-size: 18px;
           font-weight: 400;
@@ -91,12 +99,15 @@
             font-size: 14px;
           }
         }
+
         .sidler-icon {
           margin-right: 10px;
         }
+
         &.active {
           background-color: #503e9d;
           box-shadow: 0px 0px 20px 2px #10044a30;
+
           .list-item {
             color: #fff;
             font-weight: 700;
@@ -108,9 +119,10 @@
           }
         }
       }
-      li:hover {
-      }
+
+      li:hover {}
     }
+
     .email-container {
       bottom: 0px;
       left: 0px;
@@ -119,6 +131,7 @@
       margin: 50px 0;
       justify-content: space-between;
       background-color: #f7f7f7;
+
       .name {
         font-family: Open Sans;
         font-size: 16px;
@@ -126,6 +139,7 @@
         line-height: 24px;
         letter-spacing: 0px;
       }
+
       .name-email {
         font-family: Open Sans;
         font-size: 13px;
@@ -156,6 +170,7 @@
         color: #000;
         cursor: pointer;
       }
+
       .order-ready {
         margin-top: 15px;
         font-size: 14px;
@@ -164,6 +179,7 @@
         letter-spacing: 0px;
         text-align: center;
       }
+
       .Splint-Doumo {
         margin-top: 25px;
         font-size: 12px;
@@ -172,6 +188,7 @@
         letter-spacing: 0px;
         text-align: center;
       }
+
       .order-Details {
         align-items: center;
         display: flex;
@@ -183,6 +200,7 @@
         border-radius: 10px;
         background-color: #503e9d;
         cursor: pointer;
+
         .Details {
           font-size: 16px;
           font-weight: 700;
@@ -192,12 +210,14 @@
           margin: 0 35px 0 50px;
         }
       }
+
       .right-arrow {
         color: #fff;
       }
     }
   }
 }
+
 // @media (max-width: 1350px) {
 //   .sidebar-wrapper {
 //     border-radius: 15px;

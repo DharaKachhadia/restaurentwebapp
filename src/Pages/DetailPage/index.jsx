@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Apis } from '../../utils/environment';
 import "./details.scss";
-import Default from "../../../src/assets/default.jpg";
+import Default from "../../../src/assets/Images/default.jpg";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { SiAiohttp } from "react-icons/si";
@@ -14,9 +15,7 @@ function DetailsPage() {
   const { name } = useParams();
   const fetchRes = () => {
     return axios
-      .get(
-        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/restaurantDetails"
-      )
+      .get(Apis.restaurantDetails)
       .then((response) => {
         const filterData = response.data.restaurantDetails.filter((data) => {
           return data.restaurantName === name;
@@ -27,9 +26,7 @@ function DetailsPage() {
   const fetchMenu = () => {
     let menu = [];
     axios
-      .get(   
-        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/menu"
-      )
+      .get(Apis.menu)
       .then((response) => {
         const filterData = response.data.menu.forEach((data) => {
           if (data.restaurantName.includes(name)) {
@@ -81,8 +78,19 @@ function DetailsPage() {
               </div>
               <div>
                 <div className="menu-container">
+                  <div className="d-flex gap-4">
                   <div className="itemCategory">
                     <p>All</p>
+                  </div>
+                  <div className="itemCategory-other">
+                    <p>Baked (2)</p>
+                  </div>
+                  <div className="itemCategory-other">
+                    <p>Sweet (4)</p>
+                  </div>
+                  <div className="itemCategory-other">
+                    <p>Hot Dish (29)</p>
+                  </div>
                   </div>
                   <h4>Menu</h4>
                   <div className="row">

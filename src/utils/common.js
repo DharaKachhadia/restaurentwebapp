@@ -1,7 +1,7 @@
-import Baked from "../assets/baked.svg";
-import Sweet from "../assets/sweet.svg";
-import HotDish from "../assets/hot-dish.svg";
-import FastFood from "../assets/fast-food.svg";
+import Baked from "../assets/Images/baked.svg";
+import Sweet from "../assets/Images/sweet.svg";
+import HotDish from "../assets/Images/hot-dish.svg";
+import FastFood from "../assets/Images/fast-food.svg";
 
 export const Category = [
   {
